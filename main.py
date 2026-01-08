@@ -1,11 +1,12 @@
 # app/main.py
 from fastapi import FastAPI
-from routers import smart_search, alternative_finder
+from routers import smart_search, alternative_finder, calory_calculator
 
 app = FastAPI(title="Smart Multi-Agent Server")
 
 app.include_router(smart_search.router)
 app.include_router(alternative_finder.router)
+app.include_router(calory_calculator.router)
 
 if __name__ == "__main__":
     import uvicorn
